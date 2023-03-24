@@ -42,8 +42,7 @@ func (h *ServerHandler) Disconnect(id string) error {
 
 func main() {
 	handler := &ServerHandler{}
-	// todo 缺一个channelMap
-	service := websocket.NewServer(handler, handler, time.Minute, handler)
+	service := websocket.NewServer(":8080", handler, time.Minute, handler, websocket.WithAcceptor(handler))
 	service.Start()
 	defer service.Shutdown(context.Background())
 }
