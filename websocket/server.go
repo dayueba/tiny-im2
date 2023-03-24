@@ -104,6 +104,7 @@ func (s server) Start() error {
 }
 
 func (s server) Shutdown(ctx context.Context) error {
+	// todo
 	fmt.Println("ws server stop!")
 	return nil
 }
